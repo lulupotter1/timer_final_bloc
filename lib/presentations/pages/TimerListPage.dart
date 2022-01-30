@@ -27,7 +27,6 @@ class _TimerListPageState extends State<TimerListPage> {
       centerTitle: true,
       title: const Text(
         'TIMERS LIST',
-        style: ThemeTextRegular.size24,
       ),
     );
   }

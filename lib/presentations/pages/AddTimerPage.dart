@@ -54,7 +54,6 @@ class AddTimerPage extends StatelessWidget {
       automaticallyImplyLeading: false,
       title: const Text(
         'NEW TIMER',
-        style: ThemeTextRegular.size24,
       ),
     );
   }
