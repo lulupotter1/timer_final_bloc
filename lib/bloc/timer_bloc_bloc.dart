@@ -35,3 +35,18 @@ class TimerBlocAddDeleteBloc extends Bloc<TimerBlocEvent, TimerBlocState> {
     }
   }
 }
+
+class ChangeThemeBloc extends Bloc<TimerBlocEvent, ChangedThemeState> {
+  ChangeThemeBloc() : super(ChangedThemeState(darkMode: false));
+
+  @override
+  // ignore: override_on_non_overriding_member
+  ChangedThemeState get initialState => ChangedThemeState(darkMode: false);
+
+  @override
+  Stream<ChangedThemeState> mapEventToState(TimerBlocEvent event) async* {
+    if (event is ChangeThemeEvent) {
+      yield ChangedThemeState(darkMode: event.darkMode);
+    }
+  }
+}

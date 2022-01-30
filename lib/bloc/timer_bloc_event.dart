@@ -24,3 +24,9 @@ class AddControllerListEvent extends TimerBlocEvent {
   final List<AnimationController> controllerList;
   AddControllerListEvent({required this.controllerList});
 }
+
+class ChangeThemeEvent extends TimerBlocEvent {
+  final bool darkMode;
+
+  ChangeThemeEvent({required this.darkMode});
+}

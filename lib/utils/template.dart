@@ -13,6 +13,7 @@ export 'package:timer_final_bloc/presentations/widgets/timer_widget.dart';
 //Themes
 export '/utils/theme_colors.dart';
 export '/utils/theme_text_style.dart';
+export 'package:timer_final_bloc/utils/theme.dart';
 
 //Pages
 export 'package:timer_final_bloc/presentations/pages/AddTimerPage.dart';

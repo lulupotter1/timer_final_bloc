@@ -1,3 +1,4 @@
+import 'package:timer_final_bloc/presentations/widgets/switch_button.dart';
 import 'package:timer_final_bloc/utils/template.dart';
 
 class TimerListPage extends StatefulWidget {
@@ -24,6 +25,7 @@ class _TimerListPageState extends State<TimerListPage> {
 
   AppBar _appBar() {
     return AppBar(
+      actions: [],
       centerTitle: true,
       title: const Text(
         'TIMERS LIST',
@@ -173,6 +175,7 @@ class _TimerListPageState extends State<TimerListPage> {
       height: 58.h,
       width: 58.w,
       child: FloatingActionButton(
+        backgroundColor: ThemeColors.red,
         onPressed: () {
           Navigator.pushNamed(context, 'AddTimerPage');
         },

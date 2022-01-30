@@ -1,13 +1,18 @@
 import 'package:timer_final_bloc/utils/template.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MaterialApp(
+      home: const MyApp(),
+      theme: lightThemeData,
+      debugShowCheckedModeBanner: false,
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -15,19 +20,23 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => TimerBlocAddDeleteBloc(),
         ),
+        BlocProvider(
+          create: (context) => ChangeThemeBloc(),
+        ),
       ],
       child: ScreenUtilInit(
         designSize: const Size(375, 812),
-        builder: () => MaterialApp(
-          title: 'Flutter Demo',
-          theme: ThemeData(
-            primarySwatch: Colors.red,
-          ),
-          initialRoute: 'TIMER_LIST_PAGE',
-          debugShowCheckedModeBanner: false,
-          routes: {
-            'TIMER_LIST_PAGE': (context) => const TimerListPage(),
-            'AddTimerPage': (context) => const AddTimerPage(),
+        builder: () => BlocBuilder<ChangeThemeBloc, ChangedThemeState>(
+          builder: (context, state) {
+            return MaterialApp(
+              theme: state.darkMode ? darkThemeData : lightThemeData,
+              initialRoute: 'TIMER_LIST_PAGE',
+              debugShowCheckedModeBanner: false,
+              routes: {
+                'TIMER_LIST_PAGE': (context) => const TimerListPage(),
+                'AddTimerPage': (context) => const AddTimerPage(),
+              },
+            );
           },
         ),
       ),

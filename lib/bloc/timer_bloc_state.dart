@@ -26,3 +26,9 @@ class AddControllerListState extends TimerBlocState {
   final List<AnimationController> controllerList;
   AddControllerListState({required this.controllerList});
 }
+
+class ChangedThemeState extends TimerBlocState {
+  final bool darkMode;
+
+  ChangedThemeState({required this.darkMode});
+}
