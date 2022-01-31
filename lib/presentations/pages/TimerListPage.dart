@@ -25,7 +25,7 @@ class _TimerListPageState extends State<TimerListPage> {
 
   AppBar _appBar() {
     return AppBar(
-      actions: [],
+      actions: [CustomSwitchButton()],
       centerTitle: true,
       title: const Text(
         'TIMERS LIST',

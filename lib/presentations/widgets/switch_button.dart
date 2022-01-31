@@ -8,7 +8,8 @@ class CustomSwitchButton extends StatefulWidget {
 }
 
 class _CustomSwitchButtonState extends State<CustomSwitchButton> {
-  bool value = false;
+  bool isSwitched = false;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -18,14 +19,13 @@ class _CustomSwitchButtonState extends State<CustomSwitchButton> {
           width: 15.w,
         ),
         Switch(
-            value: value,
+            value: isSwitched,
             onChanged: (value) {
               setState(() {
-                value = !value;
+                isSwitched = value;
               });
-
               BlocProvider.of<ChangeThemeBloc>(context)
-                  .add(ChangeThemeEvent(darkMode: value));
+                  .add(ChangeThemeEvent(darkMode: isSwitched));
             })
       ],
     );
